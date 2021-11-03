@@ -41,18 +41,16 @@ Sample Output 2:
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 */
 
+void intersection(int input1[],int input2[], int size1, int size2){
+    int input3[10000]={0};
 
-void sortZeroesAndOne(int arr[], int n)
-{  
-     int count = 0; 
-    for (int i = 0; i < n; i++) { 
-        if (arr[i] == 0) 
-            count++; 
-    } 
-    for (int i = 0; i < count; i++){
-        arr[i] = 0; 
-    }
-    for (int i = count; i < n; i++) {
-        arr[i] = 1; 
+    for(int i=0;i<size1;i++){
+        for(int j=0;j<size2;j++){
+            if(input1[i]==input2[j] && input2[j]!=input3[j]){
+                cout<<input2[j]<<" ";
+                input3[j]=input2[j];
+                break;
+            }
+        }
     }
 }
